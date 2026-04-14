@@ -1,6 +1,6 @@
 class Name:
     def __set_name__(self, owner, name):
-        self.private_name = name
+        self.private_name = "_" + name
 
     def __get__(self, instance, owner):
         if instance is None:
