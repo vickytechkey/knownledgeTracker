@@ -9,9 +9,11 @@ class dateinput:
         return getattr(instance, self.private_name)
  
     def __set__(self, instance, value):
-        today = datetime.now().date()
-        print(today)
         if not isinstance(value, str):
             raise ValueError("Date must be a string in the format 'YYYY-MM-DD'")
         # Additional validation for date format can be added here
+        try:
+            datetime.strptime(value, '%Y-%m-%d')
+        except ValueError:
+            raise ValueError("Date must be in the format 'YYYY-MM-DD'")
         setattr(instance, self.private_name, value)
