@@ -7,11 +7,4 @@ class CourseDetails:
 
     def __init__(self,name,startdate):
         self._coursename = name
-        self._startdate = startdate
-
-
-
-c = CourseDetails(" vig ", "2023-10-10")
-print(c._coursename)
-print(c._startdate)
-    
+        self._startdate = startdate    
